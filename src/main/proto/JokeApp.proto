@@ -1,0 +1,16 @@
+syntax = "proto3";
+package jokeApp;
+
+message JokeRequest {
+  uint32 age = 1;
+  string gender = 2;
+  uint32 mood = 3;
+}
+
+message JokeResponse {
+  string joke = 1;
+}
+
+service JokeService {
+  rpc generateJoke(JokeRequest) returns (JokeResponse);
+}
